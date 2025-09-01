@@ -11,3 +11,8 @@ def insert(root,data):
         root.left = insert(root.left,data)
     else:
         root.right = insert(root.right,data)
+    return root
+def inorder(root):
+    inorder(root.left)
+    print(root.data)
+    inorder(root.right)
