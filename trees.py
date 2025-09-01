@@ -1,3 +1,6 @@
+from collections import deque
+
+
 class Node:
     def __init__(self,data):
         self.data = data
@@ -42,3 +45,21 @@ print("\nPreorder: ", end="")
 preorder(root)
 print("\nPostorder: ", end="")
 postorder(root)
+
+def levelorder(root):
+    queue = deque([root])
+    while queue:
+        node = queue.popleft()
+        print(node.data, end=" ")
+        if node.left:
+            queue.append(node.left)
+        if node.right:
+            queue.append(node.right)
+print("\nLevelorder: ", end="")
+levelorder(root)
+
+def maxDepth(root):
+    if root is None:
+        return 0
+    return 1 + max(maxDepth(root.left), maxDepth(root.right))
+print("Max Depth of tree:", maxDepth(root))
