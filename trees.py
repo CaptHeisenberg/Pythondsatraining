@@ -17,8 +17,28 @@ def inorder(root):
      inorder(root.left)
      print(root.data)
      inorder(root.right)
+def postorder(root):
+    if root:
+        postorder(root.left)
+        postorder(root.right)
+        print(root.data)
+def preorder(root):
+    if root:
+        print(root.data)
+        preorder(root.left)
+        preorder(root.right)
 root = None
 data = {50,30,70,20,40,60,80}
 for d in data:
     root = insert(root,d)
+data = [50, 30, 70, 20, 40, 60, 80]
+
+for d in data:
+    root = insert(root, d)
+
+print("Inorder: ", end="")
 inorder(root)
+print("\nPreorder: ", end="")
+preorder(root)
+print("\nPostorder: ", end="")
+postorder(root)
