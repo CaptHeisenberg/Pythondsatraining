@@ -32,7 +32,7 @@ data = {50,30,70,20,40,60,80}
 for d in data:
     root = insert(root,d)
 data = [50, 30, 70, 20, 40, 60, 80]
-
+root = None
 for d in data:
     root = insert(root, d)
 
