@@ -13,6 +13,12 @@ def insert(root,data):
         root.right = insert(root.right,data)
     return root
 def inorder(root):
-    inorder(root.left)
-    print(root.data)
-    inorder(root.right)
+    if root:
+     inorder(root.left)
+     print(root.data)
+     inorder(root.right)
+root = None
+data = {50,30,70,20,40,60,80}
+for d in data:
+    root = insert(root,d)
+inorder(root)
